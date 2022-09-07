@@ -8,7 +8,7 @@
     <meta name="keywords" content="cw2_prototype">
     <meta name="author" content="Niti Kosutao">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../template/static/material/iceburn200.png">
+    <link rel="icon" href="{% static 'material/iceburn200.png' %}">
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 </head>
@@ -16,15 +16,24 @@
 <body>
     <h1>Stock</h1>
     <table>
+        <tr>
+            <th class="id">ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Category</th>
+            <th>Brand</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
         {% for x in stock %}
         <tr>
+            <td class="id">{{x.id}}</td>
             <td>{{x.item_name}}</td>
             <td>{{x.item_type}}</td>
             <td>{{x.cat}}</td>
             <td>{{x.brand_name}}</td>
             <td>{{x.qty}}</td>
             <td>{{x.price}}</td>
-
         </tr>
         {% endfor %}
     </table>
