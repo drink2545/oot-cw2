@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+.flex_container {
+    display: flex;
+    justify-content: left;
+}
+
+.flex_container a {
+    padding: 15px 20px;
+}
+
+.navbar {
+    flex-direction: column;
+    justify-content: space-between;
+    float: left;
+    width: 150px;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(52, 52, 52, 1);
+}
+
+.navbarcontent {
+    flex-direction: column;
+}
+
+.navcon {
+    justify-content: space-between;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #f04e25;
+}
+
+.icon {
+    justify-content: center;
+}
+
+.icon a {
+    padding: 8px;
+    font-size: 20px;
+    width: 25%;
+}
+
+.content {
+    width: 100vw;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 150px;
+    overflow-wrap: break-word;
+}
+
+.box {
+    width: 100%;
+    height: 100vh;
+}
+.box h1{
+    font-size: 3em;
+}
+.box p,li{
+    font-size: 1.5em;
+}
+.box h1,h2,p,li{
+    padding: 0 50px;
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    left: 160px;
+    text-align: center;
+    background-color: rgba(51, 51, 51, 0.5);
+}
