@@ -1,4 +1,3 @@
-from http.client import HTTPResponse
 from re import template
 from django.shortcuts import render
 
@@ -6,14 +5,15 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 
 from django.template import loader
-from .models import stock_item
+from .models import stock
 from django.urls import reverse
 
 def index(request):
-    stock = stock_item.objects.all().values()
+    st = stock.objects.all().values()
     template = loader.get_template('index.html')
-    context = {'stock': stock}
+    context = {'stock': st}
     return HttpResponse(template.render(context, request))
+    # return HttpResponse(template.render())
 
 def add(request):
     template = loader.get_template('add.html')
@@ -26,5 +26,6 @@ def addrecord(request):
     brand = request.POST['brand']
     qty = request.POST['qty']
     price = request.POST['price']
-    update = stock_item(item_name=name, item_type=item_type, cat=cat, brand_name=brand, qty=qty, price=price)
+    update = stock(item_name=name, item_type=item_type, cat=cat, brand_name=brand, qty=qty, price=price)
+    update.save()
     return HttpResponseRedirect(reverse('index'))

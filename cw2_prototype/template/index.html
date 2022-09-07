@@ -16,7 +16,7 @@
 <body>
     <h1>Stock</h1>
     <table>
-        {% for x in stock%}
+        {% for x in stock %}
         <tr>
             <td>{{x.item_name}}</td>
             <td>{{x.item_type}}</td>
@@ -24,11 +24,13 @@
             <td>{{x.brand_name}}</td>
             <td>{{x.qty}}</td>
             <td>{{x.price}}</td>
-            <p>
-                <a href="add/">Add stock</a>
-            </p>
+
         </tr>
+        {% endfor %}
     </table>
+    <p>
+        <a href="add/">Add stock</a>
+    </p>
 </body>
 
 </html>
