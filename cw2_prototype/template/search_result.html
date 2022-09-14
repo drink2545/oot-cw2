@@ -14,29 +14,30 @@
 </head>
 
 <body>
-    <h1>Add member</h1>
-    <form action="addrecord/" method="post">
-        {% csrf_token %}
-        Item name: <br>
-        <input type="text" name="name">
-        <br>
-        Type: <br>
-        <input type="text" name="type">
-        <br>
-        Category: <br>
-        <input type="text" name="cat">
-        <br>
-        Brand: <br>
-        <input type="text" name="brand">
-        <br>
-        Quantity: <br>
-        <input type="number" name="qty">
-        <br>
-        Price: <br>
-        <input type="number" name="price">
-        <br>
-        <input type="submit" value="Submit">
-    </form>
+    <h1>Search result</h1>
+    <table>
+        <tr>
+            <th class="id">ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Category</th>
+            <th>Brand</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        {% for x in stock %}
+        <tr>
+            <td class="id">{{x.id}}</td>
+            <td>{{x.item_name}}</td>
+            <td>{{x.item_type}}</td>
+            <td>{{x.cat}}</td>
+
+            <td>{{x.brand_name}}</td>
+            <td>{{x.qty}}</td>
+            <td>{{x.price}}</td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 
 </html>
