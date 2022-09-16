@@ -1,8 +1,15 @@
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     overflow-x: hidden;
+    margin: 0;
 }
-
+.content{
+    padding: 10px;
+    align-items: center;
+}
+table{
+    width: 100%;
+}
 table, th, td{
     border-bottom: 1px solid black;
     border-collapse: collapse;

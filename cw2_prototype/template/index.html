@@ -14,44 +14,51 @@
 </head>
 
 <body>
+    <div class="content"> 
     <h1>Stock</h1>
     <form action="search_result/">
-        <input type="search" name="sr_id" placeholder="ID">
         <input type="search" name="sr_na" placeholder="Name">
         <input type="search" name="sr_cat" placeholder="Category">
         <input type="search" name="sr_br" placeholder="Brand">
         <button type="submit">Search</button>
     </form>
     <br>
-    <table>
-        <tr>
-            <th class="id">ID</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Brand</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th></th>
-            <th></th>
-        </tr>
-        {% for x in stock %}
-        <tr>
-            <td class="id">{{x.id}}</td>
-            <td>{{x.item_name}}</td>
-            <td>{{x.cat}}</td>
-            <td>{{x.brand_name}}</td>
-            <td>{{x.qty}}</td>
-            <td>{{x.price}}</td>
-            <td><a href="update/{{x.id}}">Edit</a></td>
-            <td>
-                <a href="delete/{{x.id}}"><i class="fa fa-trash"></i></a>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
-    <p>
-        <a href="add/">Add new item</a>
-    </p>
+    
+        <table>
+            <tr>
+                <th class="id">ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Brand</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+            {% for x in stock %}
+            <tr>
+                <td class="id">{{x.id}}</td>
+                <td>{{x.item_name}}</td>
+                <td>{{x.cat}}</td>
+                <td>{{x.brand_name}}</td>
+                <td>{{x.qty}}</td>
+                <td>{{x.price}}</td>
+                <td>
+                    <button>
+                        <a href="update/{{x.id}}">Edit</a>
+                    </button>
+                    <button>
+                        <a href="delete/{{x.id}}"><i class="fa fa-trash"></i></a>
+                    </button>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <p>
+            <button>
+                <a href="add/">Add new item</a>
+            </button>
+        </p>
+    </div>
 </body>
 
 </html>

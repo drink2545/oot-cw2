@@ -38,12 +38,10 @@ def addrecord(request):
     # return HttpResponseRedirect(reverse('index'))
 
 def search_record(request):
-    search_input_id = request.GET['sr_id']
-    search_input_name = request.GET['sr_na']
-    search_input_cat = request.GET['sr_cat']
-    search_input_brand = request.GET['sr_br']
-    search_result = stock.objects.filter(item_name = search_input_name.upper()).values()
-    
+    sname = request.GET['sr_na']
+    scat = request.GET['sr_cat']
+    sbr = request.GET['sr_br']
+    search_result = stock.objects.filter(item_name__icontains=sname, cat__icontains=scat, brand_name__icontains=sbr)
     template = loader.get_template('search_result.html')
     context = {
         'stock' : search_result
