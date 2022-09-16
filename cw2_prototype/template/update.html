@@ -15,22 +15,22 @@
 
 <body>
     <h1>Add member</h1>
-    <form action="addrecord/" method="post">
+    <form action="edit_record/{{stock.id}}" method="post">
         {% csrf_token %}
         Item name: <br>
-        <input type="text" name="name">
+        <input type="text" name="name" value="{{stock.item_name}}">
         <br>
         Category: <br>
-        <input type="text" name="cat">
+        <input type="text" name="cat" value="{{stock.cat}}">
         <br>
         Brand: <br>
-        <input type="text" name="brand">
+        <input type="text" name="brand" value="{{stock.brand_name}}">
         <br>
         Quantity: <br>
-        <input type="number" name="qty">
+        <input type="number" name="qty" value="{{stock.qty}}">
         <br>
         Price: <br>
-        <input type="number" name="price">
+        <input type="number" name="price" value="{{stock.price}}">
         <br><br>
         <input type="submit" value="Submit">
     </form>

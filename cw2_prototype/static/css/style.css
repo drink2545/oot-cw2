@@ -11,11 +11,15 @@ th{
     text-align: center;
 }
 td{
-    text-align: left;
+    text-align: center;
     vertical-align: middle;
     height: max-content;
     width: 100px;
 }
 th, td .id{
     width: fit-content;
+}
+a:link, a:visited{
+    color: black;
+    text-decoration: none!important;
 }
