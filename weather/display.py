@@ -24,7 +24,7 @@ class current(display):
         if self.temp > self.maxtemp:
             self.maxtemp = self.temp
         self.render_display()
-
+{(a, p({a,b}, {c})), p({c}, {d,e}), (iL, a), (e, oL)}
     def render_display(self):
         print(f'current temperature: {self.temp}')
         print(f'max temperature: {self.maxtemp}\n')
