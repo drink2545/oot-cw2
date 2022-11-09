@@ -21,6 +21,11 @@ class Knight(Character):
         self.weapon = sword()
     def attack(self):
         return self.weapon.use() * 2.0
+    def take_dmg(self, dmg):
+        self.hp -= 0.3*dmg
+        if self.hp < 0:
+            return False
+
 
 class King(Character):
     def __init__(self):
@@ -47,3 +52,4 @@ class God(Character):
         self.name = 'God'
         self.hp = 60000
         self.weapon = fist()
+    
