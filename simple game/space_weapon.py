@@ -14,7 +14,7 @@ class LaserGun(spaceWeaponBehavior):
         self.energy -= 10
 
         if self.energy > 0:
-            return 1000
+            return 100
         else:
             return 0
 
@@ -31,7 +31,7 @@ class ElectricShotgun(spaceWeaponBehavior):
         self.energy -= 50
 
         if self.energy > 0:
-            return 1000
+            return 200
         else:
             return 0
 
@@ -42,14 +42,15 @@ class ElectricShotgun(spaceWeaponBehavior):
 class LightSaber(spaceWeaponBehavior):
     def __init__(self) -> None:
         self.energy = 9999
-    
-    def slash(self):
+
+    def shoot(self):
+        print('slash')
         self.energy -= 1
         if self.energy > 0:
-            return 1000
+            return 500
         else:
             return 0
 
-    def charge(self):
+    def reload(self):
         print('Charging')
         self.energy = 9999
